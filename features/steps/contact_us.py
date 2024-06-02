@@ -17,6 +17,7 @@ def login(context):
 @when('Click on settings option')
 def click_settings(context):
     context.app.home_page.click_settings()
+    sleep(4)
 
 
 @when('Click on Contact us option')
@@ -27,6 +28,7 @@ def click_contact_us(context):
 @then('Verify the right page opens')
 def verify_contact_page(context):
     context.app.contact_us_page.verify_contact_page()
+    sleep(4)
 
 
 @then('Verify there are at least {amount} social media icons')
