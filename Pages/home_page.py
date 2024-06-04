@@ -1,6 +1,5 @@
 from Pages.base_page import Page
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains
 
 
 class HomePage(Page):

@@ -1,6 +1,7 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.firefox.service import Service
+from webdriver_manager.firefox import GeckoDriverManager
+from selenium.webdriver.firefox.options import Options as FirefoxOptions, Options
 from app.application import Application
 
 
@@ -8,9 +9,15 @@ def browser_init(context):
     """
     :param context: Behave context
     """
-    driver_path = ChromeDriverManager().install()
+
+    driver_path = GeckoDriverManager().install()
     service = Service(driver_path)
-    context.driver = webdriver.Chrome(service=service)
+    context.driver = webdriver.Firefox(service=service)
+
+    options = webdriver.FirefoxOptions()
+
+    options.add_argument('headless')
+    options.add_argument('--window-size=1920,1080')
 
     context.driver.maximize_window()
 

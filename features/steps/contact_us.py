@@ -34,3 +34,4 @@ def verify_contact_page(context):
 @then('Verify there are at least {amount} social media icons')
 def verify_social_media_icons(context, amount):
     context.app.contact_us_page.verify_social_media_icons(amount)
+
